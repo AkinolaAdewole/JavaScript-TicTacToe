@@ -20,3 +20,20 @@ h3 {
     font-family: system-ui;
     font-size: 30px;
 }
+
+.players{
+    display: flex;
+}
+p {
+    color: silver;
+}
+
+.players input{
+    border: 1px solid black;
+}
+.player button{
+    color: antiquewhite;
+    background-color: green;
+    width: 80px;
+    height: 40px;
+}
