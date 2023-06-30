@@ -29,11 +29,19 @@ p {
 }
 
 .players input{
-    border: 1px solid black;
+    border: 1px solid gold;
+    color: antiquewhite;
+    border-radius: 20px;
 }
 .player button{
     color: antiquewhite;
     background-color: green;
+    border-radius: 20px;
     width: 80px;
     height: 40px;
+}
+
+::placeholder{
+    color: antiquewhite;
+    text-align: center;
 }
