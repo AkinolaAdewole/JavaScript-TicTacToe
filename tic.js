@@ -1,7 +1,8 @@
 
 startGame=()=>{
     if(player1.value!=='' && player2.value!=="" && btn.value==="Start"){
-        
+        firstplayer.innerHTML= player1.value;
+        secondplayer.innerHTML= player2.value;
     }
 }
 
