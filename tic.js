@@ -1,3 +1,10 @@
+
+startGame=()=>{
+    if(player1.value!=='' && player2.value!=="" && btn.value==="Start"){
+        
+    }
+}
+
 let initialvalue = "X"
 
 const test =(e)=> {
