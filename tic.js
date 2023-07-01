@@ -4,7 +4,7 @@ startGame=()=>{
         btn.innerHTML="End"
         firstplayer.innerHTML= player1.value;
         secondplayer.innerHTML= player2.value;
-        gameplayer.innerHTML= player1.value + "start the game" + "{X}";
+        gamePlayer.innerHTML= player1.value + "start the game" + "{X}";
         outcome.innerHTML="ENJOY";
 
         one.innerHTML="";
@@ -26,7 +26,7 @@ startGame=()=>{
 
 						scoreone.innerHTML = "0";
 						scoretwo.innerHTML = "0";
-                        
+
 						btn.innerHTML = "Start";
 						one.innerHTML = "";
 						two.innerHTML = "";
@@ -37,6 +37,9 @@ startGame=()=>{
 						seven.innerHTML = "";
 						eight.innerHTML = "";
 						nine.innerHTML = "";
+    } else {
+        gamePlayer.innerHTML = "Please input your names."; 
+        outcome.innerHTML = "Please input your names.";
     }
 }
 
