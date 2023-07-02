@@ -1,7 +1,9 @@
 
+let check=false;
 startGame=()=>{
     if(player1.value!=='' && player2.value!=="" && btn.value==="Start"){
         btn.innerHTML="End"
+		check= true
         firstplayer.innerHTML= player1.value;
         secondplayer.innerHTML= player2.value;
         gamePlayer.innerHTML= player1.value + "start the game" + "{X}";
@@ -17,7 +19,8 @@ startGame=()=>{
         eight.innerHTML="";
         nine.innerHTML="";
     }else if (player1.value!=='' && player2.value!=="" && btn.value==="Start"){
-        player1.value = "";
+                       check=false;
+		                player1.value = "";
 						player2.value = "";
 						firstplayer.innerHTML = "";
 						secondplayer.innerHTML = "";
@@ -84,8 +87,8 @@ const test =(e)=> {
 					(one.innerHTML == "X" && five.innerHTML == "X" && nine.innerHTML == "X") ||
 					(three.innerHTML == "X" && five.innerHTML == "X" && seven.innerHTML == "X") 
 					){
-						nameplayer.innerHTML = player1.value + " Won. Click on replay or End."
-						result.innerHTML = player2.value + " {O} it will be your turn after re-play";
+						gamePlayer.innerHTML = player1.value + " Won. Click on replay or End."
+						outcome.innerHTML = player2.value + " {O} it will be your turn after re-play";
 						++scoreone.innerHTML;
 					}
 
@@ -102,8 +105,8 @@ const test =(e)=> {
 					(one.innerHTML == "O" && five.innerHTML == "O" && nine.innerHTML == "O") ||
 					(three.innerHTML == "O" && five.innerHTML == "O" && seven.innerHTML == "O")
 					){
-						nameplayer.innerHTML = player2.value + " Won. Click on replay or End.";
-						result.innerHTML = player1.value + " {X} it will be your turn after re-play";
+						gamePlayer.innerHTML = player2.value + " Won. Click on replay or End.";
+						outcome.innerHTML = player1.value + " {X} it will be your turn after re-play";
 						++scoretwo.innerHTML;
 					}
 
