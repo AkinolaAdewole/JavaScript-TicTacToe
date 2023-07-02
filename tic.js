@@ -73,6 +73,23 @@ const test =(e)=> {
     
    }
 
+   		// IF STATEMENT FOR WINNER (PLAYER) WITH LETTER X
+				if (
+					(one.innerHTML == "X" && two.innerHTML == "X" && three.innerHTML == "X") ||
+					(four.innerHTML == "X" && five.innerHTML == "X" && six.innerHTML == "X") ||
+					(seven.innerHTML == "X" && eight.innerHTML == "X" && nine.innerHTML == "X") ||
+					(one.innerHTML == "X" && four.innerHTML == "X" && seven.innerHTML == "X") ||
+					(two.innerHTML == "X" && five.innerHTML == "X" && eight.innerHTML == "X") ||
+					(three.innerHTML == "X" && six.innerHTML == "X" && nine.innerHTML == "X") ||
+					(one.innerHTML == "X" && five.innerHTML == "X" && nine.innerHTML == "X") ||
+					(three.innerHTML == "X" && five.innerHTML == "X" && seven.innerHTML == "X") 
+					){
+						nameplayer.innerHTML = player1.value + " Won. Click on replay or End."
+						result.innerHTML = player2.value + " {O} it will be your turn after re-play";
+						++scoreone.innerHTML;
+					}
+
+
 
 
 }
