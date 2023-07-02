@@ -46,21 +46,36 @@ startGame=()=>{
     }
 }
 
+
+        	// FUNCTION FOR THE REPLAY BUTTON
+			rePlay=()=> {
+				one.innerHTML = "";
+				two.innerHTML = "";
+				three.innerHTML = "";
+				four.innerHTML = "";
+				five.innerHTML = "";
+				six.innerHTML = "";
+				seven.innerHTML = "";
+				eight.innerHTML = "";
+				nine.innerHTML = "";
+				nameplayer.innerHTML = "GO ON PLAYERS!!!"
+
+				result.innerHTML = "Another chance {GOODLUCK!!!}";
+	}
+
 let initialvalue = "X"
 
 const test =(e)=> {
    
+	if ((gamePlayer.innerHTML == player1.value + " Won. Click on replay or End.") || (gamePlayer.innerHTML == player2.value + " Won. Click on replay or End.")) {
+		gamePlayer.innerHTML = " The winner has already been determined. Click on replay or End."
+	}
+
    
     if (initialvalue == "X" && e.target.innerHTML== ""){
         e.target.innerHTML= "X"
         initialvalue ="O" ;
-        
-
     
-    // if (initialvalue == "O" && e.target.innerHTML=="" ){
-    //     e.target.innerHTML ="O";
-    //     initialvalue="X";
-    // }
 
    }
 
@@ -109,6 +124,20 @@ const test =(e)=> {
 						outcome.innerHTML = player1.value + " {X} it will be your turn after re-play";
 						++scoretwo.innerHTML;
 					}
+
+					//If Statement for draw game
+					if ((one.innerHTML  != "") &&
+					(two.innerHTML  != "") &&
+					(three.innerHTML != "") &&
+					(four.innerHTML != "") &&
+					(five.innerHTML != "") &&
+					(six.innerHTML  != "") &&
+					(seven.innerHTML != "") &&
+					(eight.innerHTML != "") &&
+					(nine.innerHTML != "")) {
+				gamePlayer.innerHTML = "Oopss!!! Draw game. Click on Re-play to play again or End to end the game";
+				outcome.innerHTML = "NO WINNER"
+			}
 
 
 
