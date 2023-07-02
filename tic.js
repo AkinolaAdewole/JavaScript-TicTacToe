@@ -91,5 +91,22 @@ const test =(e)=> {
 
 
 
+                    // IF STATEMENT FOR THE WINNER (PLAYER) WITH LETTER O
+                     if (
+					(one.innerHTML == "O" && two.innerHTML == "O" && three.innerHTML == "O") ||
+					(four.innerHTML == "O" && five.innerHTML == "O" && six.innerHTML == "O") ||
+					(seven.innerHTML == "O" && eight.innerHTML == "O" && nine.innerHTML == "O") ||
+					(one.innerHTML == "O" && four.innerHTML == "O" && seven.innerHTML == "O") ||
+					(two.innerHTML == "O" && five.innerHTML == "O" && eight.innerHTML == "O") ||
+					(three.innerHTML == "O" && six.innerHTML == "O" && nine.innerHTML == "O") ||
+					(one.innerHTML == "O" && five.innerHTML == "O" && nine.innerHTML == "O") ||
+					(three.innerHTML == "O" && five.innerHTML == "O" && seven.innerHTML == "O")
+					){
+						nameplayer.innerHTML = player2.value + " Won. Click on replay or End.";
+						result.innerHTML = player1.value + " {X} it will be your turn after re-play";
+						++scoretwo.innerHTML;
+					}
+
+
 
 }

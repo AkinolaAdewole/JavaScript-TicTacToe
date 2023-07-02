@@ -10,6 +10,7 @@
             background-size: cover;
             background-color: rgba(0, 0, 0.2, 0.8);
             background-repeat: no-repeat;
+            /* background-image: url('bd9.jpg'); */
             background-blend-mode: color-burn;
             height: 100vh;
         }
@@ -79,8 +80,8 @@
             height: 75px;
             border-right: 3px inset goldenrod;
             border-bottom: 3px inset gold;
-            color: green;
-            font-size: 40pt;
+            color: goldenrod;
+            font-size: 20pt;
             padding: 10px;
             text-align: center;
             border-radius: 25px;
@@ -153,7 +154,7 @@
 
         @media only screen and (min-width:1024px) {
             body{
-                background-image: url('bd9.jpg');
+                background-image: url(bd9.jpg);
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-blend-mode: color-burn;
@@ -163,7 +164,7 @@
                 text-align: center;
                 color: azure;
                 padding-top: 2px;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
                 font-size: 30px;
             }
 
@@ -240,10 +241,10 @@
                 border-right: 3px inset greenyellow;
                 border-bottom: 3px inset green;
                 color: green;
-                font-size: 60pt;
+                font-size: 40pt;
                 padding: 10px;
                 text-align: center;
-                border-radius: 20px;
+                border-radius: 25px;
             }
 
             .scoreboard {
