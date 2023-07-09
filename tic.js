@@ -2,49 +2,47 @@
 let box=""
 let check=false;
 startGame=()=>{
-    if(player1.value!=='' && player2.value!=="" && btn.value==="Start"){
-        btn.innerHTML="End"
-		check= true
-        firstplayer.innerHTML= player1.value;
-        secondplayer.innerHTML= player2.value;
-        gamePlayer.innerHTML= player1.value + "start the game" + "{X}";
-        outcome.innerHTML="ENJOY";
-
-        one.innerHTML="";
-        two.innerHTML="";
-        three.innerHTML="";
-        four.innerHTML="";
-        five.innerHTML="";
-        six.innerHTML="";
-        seven.innerHTML="";
-        eight.innerHTML="";
-        nine.innerHTML="";
-    }else if (player1.value!=='' && player2.value!=="" && btn.value==="Start"){
-                       check=false;
-		                player1.value = "";
-						player2.value = "";
-						firstplayer.innerHTML = "";
-						secondplayer.innerHTML = "";
-						gameplayer.innerHTML = "End of Game!!!";
-						outcome.innerHTML = "THANKS! THANKS!! THANKS!!!";
-
-						scoreone.innerHTML = "0";
-						scoretwo.innerHTML = "0";
-
-						btn.innerHTML = "Start";
-						one.innerHTML = "";
-						two.innerHTML = "";
-						three.innerHTML = "";
-						four.innerHTML = "";
-						five.innerHTML = "";
-						six.innerHTML = "";
-						seven.innerHTML = "";
-						eight.innerHTML = "";
-						nine.innerHTML = "";
-    } else {
-        gamePlayer.innerHTML = "Please input your names."; 
-        outcome.innerHTML = "Please input your names.";
-    }
+    if (player1.value != "" && player2.value != "" && btn.innerHTML == "Start") {
+		btn.innerHTML = "End"
+		check = true;
+		firstplayer.innerHTML = player1.value;
+		secondplayer.innerHTML = player2.value;
+		nameplayer.innerHTML = "Start the game " + player1.value + "{X}";
+		result.innerHTML = "Enjoy ur game. GOODLUCK!!!"
+			one.innerHTML = "";
+			two.innerHTML = "";
+			three.innerHTML = "";
+			four.innerHTML = "";
+			five.innerHTML = "";
+			six.innerHTML = "";
+			seven.innerHTML = "";
+			eight.innerHTML = "";
+			nine.innerHTML = "";
+		} else if (player1.value != "" && player2.value != "" && btn.innerHTML == "End") {
+			check = false;
+			box = " "
+			player1.value = "";
+			player2.value = "";
+			firstplayer.innerHTML = "";
+			secondplayer.innerHTML = "";
+			nameplayer.innerHTML = "End of Game!!! THANKS";
+			result.innerHTML = "End of Game!!! THANKS";
+			scoreone.innerHTML = "0";
+			scoretwo.innerHTML = "0";
+			btn.innerHTML = "Start";
+			one.innerHTML = "";
+			two.innerHTML = "";
+			three.innerHTML = "";
+			four.innerHTML = "";
+			five.innerHTML = "";
+			six.innerHTML = "";
+			seven.innerHTML = "";
+			eight.innerHTML = "";
+			nine.innerHTML = "";
+		} else {
+			nameplayer.innerHTML = "Please input your names."; 
+			result.innerHTML = "Please input your names.";
+		}	
 }
 
 
@@ -69,6 +67,31 @@ let initialvalue = "X"
 const test =(e)=> {
    
 
+
+	if ((nameplayer.innerHTML == player1.value + " Won. Click on replay or End.") || (nameplayer.innerHTML == player2.value + " Won. Click on replay or End.")) {
+		nameplayer.innerHTML = "We have a winner already. Click on replay or End."
+	}
+
+
+	if (e.target.innerHTML != "") {
+		return;
+	}
+	
+
+	if (nameplayer.innerHTML == "We have a winner already. Click on replay or End.") {
+		return;
+	} else if (check == true && box == " ") {
+		e.target.innerHTML = "X";
+		box = 1;
+		nameplayer.innerHTML = player2.value + " {O}"+ " your turn ";
+	} else if (check == true && box == 1) {
+		e.target.innerHTML = "O";
+		box = " ";
+		nameplayer.innerHTML = player1.value + " {X}"+ " your turn ";
+	} else {
+		nameplayer.innerHTML = "Click on start to start the game.";
+		result.innerHTML = "Click on start to start the game.";
+	} 
 
    		// IF STATEMENT FOR WINNER (PLAYER) WITH LETTER X
 				if (
