@@ -1,4 +1,5 @@
 
+let box=""
 let check=false;
 startGame=()=>{
     if(player1.value!=='' && player2.value!=="" && btn.value==="Start"){
@@ -67,29 +68,7 @@ let initialvalue = "X"
 
 const test =(e)=> {
    
-	if ((gamePlayer.innerHTML == player1.value + " Won. Click on replay or End.") || (gamePlayer.innerHTML == player2.value + " Won. Click on replay or End.")) {
-		gamePlayer.innerHTML = " The winner has already been determined. Click on replay or End."
-	}
 
-   
-    if (initialvalue == "X" && e.target.innerHTML== ""){
-        e.target.innerHTML= "X"
-        initialvalue ="O" ;
-    
-
-   }
-
-
-   else if (initialvalue == "O" && e.target.innerHTML==""){
-    e.target.innerHTML="O"
-    initialvalue = "X";
-
-    // else if (initialvalue = "X" && e.target.innerHTML==""){
-    //     e.target.innerHTML ="X";
-    //     initialvalue="O"
-    // }
-    
-   }
 
    		// IF STATEMENT FOR WINNER (PLAYER) WITH LETTER X
 				if (
