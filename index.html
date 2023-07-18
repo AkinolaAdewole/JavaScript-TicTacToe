@@ -1,76 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="tic.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</head>
-<body >
-    
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="game.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body style="background-image: url(bd9.jpg);">
 
-    <h2>Akinola Adewole</h2>
-    <h3>Tic Tac Toe</h3>
+            <h3>Akinola Adewole</h3>
+			<h3>TIC TAC TOE</h3>
+			<div class="player">
+				<p>Players should enter there names:</p>
+				<input type="text" name="" placeholder="player1" id="player1">
+				<input type="text" name="" placeholder="player2" id="player2">
 
-    <div class="players">
-        <p>To both players:   kindly input your names.</p>
-        <input type="text" name="" id="player1" placeholder="player 1">
-        <input type="text" id="player2" placeholder="player 2">
-        <button id="btn" onclick="startGame()">Start</button>
-    </div>
+				<button id="btn" onclick="onStart()">Start</button>
+			</div>
+			<div class="nameplayer" id="nameplayer">WELCOME!!!</div>
+			<div class="nameplayer" id="result">GOODLUCK DEAR PLAYERS!!!</div>
+		<div class="all">
+			<div>
+				<div class="row">
+					<div onclick="playHere(event)" id="one"></div>
+					<div onclick="playHere(event)" id="two"></div>
+					<div onclick="playHere(event)" id="three"></div>
+				</div>
 
-    <div>
-        <div class="gameplayer" id="gamePlayer">Welcome</div>
-        <div class="gameplayer" id="outcome"> GOODLUCK PLAYERS</div>
-    </div>
+				<div class="row">
+					<div onclick="playHere(event)" id="four"></div>
+					<div onclick="playHere(event)" id="five"></div>
+					<div onclick="playHere(event)" id="six"></div>
+				</div>
 
-    <div class="all">
-        <div>
-               <div class="row">
-                   <div onclick="test(event)"  id="one"></div>
-                   <div onclick="test(event)" id="two"></div>
-                   <div onclick="test(event)" id="three"></div>
-               </div>
+				<div class="row">
+					<div onclick="playHere(event)" id="seven"></div>
+					<div onclick="playHere(event)" id="eight"></div>
+					<div onclick="playHere(event)" id="nine"></div>
+				</div>
+			</div>								
+		</div><!-- 
+		<div style="background-color: red;"id="result">kkkskskk</div> -->
 
-               <div class="row">
-                   <div onclick="test(event)" id="four"></div>
-                   <div onclick="test(event)" id="five"></div>
-                   <div onclick="test(event)" id="six"></div>
-               </div>
+		<div class="scoreboard">
+			<div id="firstplayer"class=firstplayer></div>
+			<div class="score">
+				<div id="scoreone">0</div>
+				<div>-</div>
+				<div id="scoretwo">0</div>
+			</div>
+			<div id="secondplayer" class="secondplayer"></div>
+		</div>
 
-               <div class="row">
-                   <div onclick="test(event)" id="seven"></div>
-                   <div onclick="test(event)" id="eight"></div>
-                   <div onclick="test(event)" id="nine"></div>
-               </div>
-        </div>
-    </div>
+		<div class="replay">
+			<button class="replaybutton" onclick="rePlay()">Re-play</button>	
+		</div>
 
 
-    <div class="scoreboard">
-        <div id="firstplayer" class=firstplayer></div>
-        <div class="score">
-            <div id="scoreone">0</div>
-            <div>-</div>
-            <div id="scoretwo">0</div>
-        </div>
-        <div id="secondplayer" class="secondplayer"></div>
-    </div>
+		<script type="text/javascript">
+			
+			var box = " ";
+			var check = false;
+			// FUNCTION FOR START AND END BUTTON
+			function onStart() {
+				if (player1.value != "" && player2.value != "" && btn.innerHTML == "Start") {
+					btn.innerHTML = "End"
+					check = true;
+					firstplayer.innerHTML = player1.value;
+					secondplayer.innerHTML = player2.value;
+					nameplayer.innerHTML = "Start the game " + player1.value + "{X}";
+					result.innerHTML = "Enjoy ur game. GOODLUCK!!!"
+						one.innerHTML = "";
+						two.innerHTML = "";
+						three.innerHTML = "";
+						four.innerHTML = "";
+						five.innerHTML = "";
+						six.innerHTML = "";
+						seven.innerHTML = "";
+						eight.innerHTML = "";
+						nine.innerHTML = "";
+					} else if (player1.value != "" && player2.value != "" && btn.innerHTML == "End") {
+						check = false;
+						box = " "
+						player1.value = "";
+						player2.value = "";
+						firstplayer.innerHTML = "";
+						secondplayer.innerHTML = "";
+						nameplayer.innerHTML = "End of Game!!! THANKS";
+						result.innerHTML = "End of Game!!! THANKS";
+						scoreone.innerHTML = "0";
+						scoretwo.innerHTML = "0";
+						btn.innerHTML = "Start";
+						one.innerHTML = "";
+						two.innerHTML = "";
+						three.innerHTML = "";
+						four.innerHTML = "";
+						five.innerHTML = "";
+						six.innerHTML = "";
+						seven.innerHTML = "";
+						eight.innerHTML = "";
+						nine.innerHTML = "";
+					} else {
+						nameplayer.innerHTML = "Please input your names."; 
+						result.innerHTML = "Please input your names.";
+					}	
+			}
+			// END OF FUNCTION FOR START AND END BUTTON
 
-    <div class="replay">
-        <button class="replaybutton" onclick="rePlay()">Re-play</button>	
-    </div>
+			// FUNCTION FOR THE REPLAY BUTTON
+			function rePlay() {
+						one.innerHTML = "";
+						two.innerHTML = "";
+						three.innerHTML = "";
+						four.innerHTML = "";
+						five.innerHTML = "";
+						six.innerHTML = "";
+						seven.innerHTML = "";
+						eight.innerHTML = "";
+						nine.innerHTML = "";
+						nameplayer.innerHTML = "GO ON PLAYERS!!!"
 
-    <!-- <table border="1px solid black" style="height:600px; width: 800px;">
-        <tr> <td onclick="test(event)" class=""></td>  <td onclick="test(event)" class=""></td>  <td onclick="test(event)"></td> </tr>
-        <tr> <td onclick="test(event)"></td>  <td onclick="test(event)"></td>  <td onclick="test(event)"></td> </tr>
-        <tr> <td onclick="test(event)"></td>  <td onclick="test(event)"></td>  <td onclick="test(event)"></td> </tr>
+						result.innerHTML = "Another chance {GOODLUCK!!!}";
+			}
+			// END OF FUNCTION FOR REPLAY BUTTON
 
-    </table> -->
-    <script src="tic.js"></script>
-    
-</body>
+			// FUNCTION FOR THE DIV WHERE X AND O WILL DISPLAY
+			function playHere(event) {
+
+
+				if ((nameplayer.innerHTML == player1.value + " Won. Click on replay or End.") || (nameplayer.innerHTML == player2.value + " Won. Click on replay or End.")) {
+					nameplayer.innerHTML = "We have a winner already. Click on replay or End."
+				}
+
+
+				if (event.target.innerHTML != "") {
+					return;
+				}
+				
+
+				if (nameplayer.innerHTML == "We have a winner already. Click on replay or End.") {
+					return;
+				} else if (check == true && box == " ") {
+					event.target.innerHTML = "X";
+					box = 1;
+					nameplayer.innerHTML = player2.value + " {O}"+ " your turn ";
+				} else if (check == true && box == 1) {
+					event.target.innerHTML = "O";
+					box = " ";
+					nameplayer.innerHTML = player1.value + " {X}"+ " your turn ";
+				} else {
+					nameplayer.innerHTML = "Click on start to start the game.";
+					result.innerHTML = "Click on start to start the game.";
+				} 
+
+
+				if ((one.innerHTML  != "") &&
+							(two.innerHTML  != "") &&
+							(three.innerHTML != "") &&
+							(four.innerHTML != "") &&
+							(five.innerHTML != "") &&
+							(six.innerHTML  != "") &&
+							(seven.innerHTML != "") &&
+							(eight.innerHTML != "") &&
+							(nine.innerHTML != "")) {
+						nameplayer.innerHTML = "Oopss!!! Draw game. Click on Re-play to play again or End to end the game";
+						result.innerHTML = "NO WINNER"
+					}
+
+				// IF STATEMENT FOR WINNER (PLAYER) WITH LETTER X
+				if (
+					(one.innerHTML == "X" && two.innerHTML == "X" && three.innerHTML == "X") ||
+					(four.innerHTML == "X" && five.innerHTML == "X" && six.innerHTML == "X") ||
+					(seven.innerHTML == "X" && eight.innerHTML == "X" && nine.innerHTML == "X") ||
+					(one.innerHTML == "X" && four.innerHTML == "X" && seven.innerHTML == "X") ||
+					(two.innerHTML == "X" && five.innerHTML == "X" && eight.innerHTML == "X") ||
+					(three.innerHTML == "X" && six.innerHTML == "X" && nine.innerHTML == "X") ||
+					(one.innerHTML == "X" && five.innerHTML == "X" && nine.innerHTML == "X") ||
+					(three.innerHTML == "X" && five.innerHTML == "X" && seven.innerHTML == "X") 
+					){
+						nameplayer.innerHTML = player1.value + " Won. Click on replay or End."
+						result.innerHTML = player2.value + " {O} it will be your turn after re-play";
+						++scoreone.innerHTML;
+					}
+
+
+				// END OF IF STATEMENT FOR WINNER (PLAYER) WITH LETTER X
+
+				// IF STATEMENT FOR THE WINNER (PLAYER) WITH LETTER O
+				 if (
+					(one.innerHTML == "O" && two.innerHTML == "O" && three.innerHTML == "O") ||
+					(four.innerHTML == "O" && five.innerHTML == "O" && six.innerHTML == "O") ||
+					(seven.innerHTML == "O" && eight.innerHTML == "O" && nine.innerHTML == "O") ||
+					(one.innerHTML == "O" && four.innerHTML == "O" && seven.innerHTML == "O") ||
+					(two.innerHTML == "O" && five.innerHTML == "O" && eight.innerHTML == "O") ||
+					(three.innerHTML == "O" && six.innerHTML == "O" && nine.innerHTML == "O") ||
+					(one.innerHTML == "O" && five.innerHTML == "O" && nine.innerHTML == "O") ||
+					(three.innerHTML == "O" && five.innerHTML == "O" && seven.innerHTML == "O")
+					){
+						nameplayer.innerHTML = player2.value + " Won. Click on replay or End.";
+						result.innerHTML = player1.value + " {X} it will be your turn after re-play";
+						++scoretwo.innerHTML;
+					}
+					// END OF IF OF STATEMENT FOR THE WINNER (PLAYER) WITH LETTER O;
+
+					// // ELSE IF STATEMENT TO ALERT WHEN THERE IS DRAW (NO WINNER)
+					
+					// END ELSE IF STATEMENT TO ALERT WHEN THERE IS DRAW (NO WINNER)
+			}
+
+			// END OF FUNCTION FOR THE DIV X AND O WILL BE DISPLAY
+			
+			
+		</script>
+
+	</body>
 </html>
