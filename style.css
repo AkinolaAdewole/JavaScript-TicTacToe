@@ -42,9 +42,7 @@
             flex-direction: column;
         }
 
-        p {
-            color: whitesmoke;
-        }
+      
 
         .players input{
             border: 1px solid darkgoldenrod;
@@ -88,15 +86,15 @@
             background-color: rgba(0,0,0, 0.7);
             width: 80px;
             height: 80px;
-            border-right: 3px inset silver;
-            border-bottom: 3px inset silver;
-            color: green;
+            border-right: 3px inset goldenrod;
+            border-bottom: 3px inset gold;
+            color: goldenrod;
             font-size: 40pt;
             padding: 10px;
             text-align: center;
             border-radius: 30px;
         }
-        
+
        
     
         .scoreboard {
@@ -202,7 +200,7 @@
             }
     
             p {
-                color: silver;
+                color: green;
                 padding-left: 40px;
                 padding-top: 10px;
                 font-size: 15pt;
