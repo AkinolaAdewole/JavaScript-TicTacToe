@@ -77,25 +77,7 @@
             /* margin-left: 85px; */
         }
     
-        .row {
-            display: flex;
-            flex-direction: row;
-            width: 240px;
-            margin: 0 auto;
-        }
-    
-        .row div {
-            background-color: rgba(0,0,0, 0.7);
-            width: 70px;
-            height: 75px;
-            border-right: 3px inset goldenrod;
-            border-bottom: 3px inset gold;
-            color: goldenrod;
-            font-size: 20pt;
-            padding: 10px;
-            text-align: center;
-            border-radius: 25px;
-        }
+       
     
         .scoreboard {
             width: 90%;
@@ -190,17 +172,21 @@
                 font-size: 30px;
             }
 
-            .players{
+            .player {
+                background-color: rgba(0,0,0, 0.5);
                 display: flex;
                 flex-direction: row;
-                background-color: rgba(0,0,0, 0.5);
                 justify-content: space-evenly;
                 width: 1000px;
                 margin: 0px auto;
             }
-
+    
             p {
                 color: silver;
+                padding-left: 40px;
+                padding-top: 10px;
+                font-size: 15pt;
+                padding-bottom: 10px;
             }
             
             .player input {
